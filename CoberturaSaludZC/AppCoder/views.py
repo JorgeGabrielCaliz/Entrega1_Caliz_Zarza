@@ -1,9 +1,10 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
+from AppCoder.models import Cartillas
 
-def mostrar_inicio(request):
-    return HttpResponse ("hola mundo")
+def inicio(request):
+    return render(request, "AppCoder/cursos.html")
 
 def empadronamiento(request):
     return render(request, "AppCoder/cursos.html")
@@ -12,7 +13,13 @@ def afiliado(request):
     return render(request, "AppCoder/cursos.html")
     
 def cartillas(request):
-    return render(request, "AppCoder/cursos.html")
+    if request.method != "POST":
+        return render(request, "AppCoder/cartilla.html")
+    
+    cartillas = Cartillas(prestador=request.POST["prestador"], direccion=request.POST["direccion"], email=request.POST["email"])
+    cartillas.save()
+    return render(request, "AppCoder/inicio.html")
+
 
 def autorizaciones(request):
     return render(request, "AppCoder/cursos.html")
