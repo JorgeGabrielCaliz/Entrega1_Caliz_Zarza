@@ -1,0 +1,11 @@
+<p>Estamos buscando el afiliado: {{ numero_de_afiliado }}</p>
+
+{% if afiliados_encontrados %}
+
+<ul>
+{% for afiliado in afiliados_encontrados %}
+    <li>{{afiliado.nombre}} (numero_de_afiliado {{afiliado.numero_de_afiliado}})</li>
+{% endfor %}
+</ul>
+
+{% endif %}

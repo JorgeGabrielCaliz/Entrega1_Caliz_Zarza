@@ -22,6 +22,8 @@ from AppCoder.views import (
     cartillas,
     autorizaciones,
     seguro_al_viajero,
+    busqueda_2,
+    buscar_2
 )
 
 urlpatterns = [
@@ -30,5 +32,7 @@ urlpatterns = [
     path('afiliado/', afiliado, name="afiliado"),
     path('cartillas/', cartillas, name="cartillas"),
     path('autorizaciones/', autorizaciones, name="autorizaciones"),
-    path('seguro_al_viajero/', seguro_al_viajero, name="seguro_al_viajero")
+    path('seguro_al_viajero/', seguro_al_viajero, name="seguro_al_viajero"),
+    path("busqueda_2/", busqueda_2, name="busqueda_2"),
+    path("buscar_2/", buscar_2),
 ]

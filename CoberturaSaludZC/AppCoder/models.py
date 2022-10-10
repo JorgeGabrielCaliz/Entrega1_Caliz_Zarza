@@ -23,11 +23,11 @@ class Cartillas(models.Model):
 
 class Autorizaciones(models.Model):
     estudio_a_realizar = models.CharField(max_length=30)
-    numero_de_afiliado = models.EmailField()
+    numero_de_afiliado = models.IntegerField()
     fecha_de_orden = models.DateField()
 
 class Seguro_al_viajero(models.Model):
-    numero_de_afiliado = models.EmailField()
+    numero_de_afiliado = models.IntegerField()
     plan = models.CharField(max_length=30)
     destino = models.CharField(max_length=30)
     

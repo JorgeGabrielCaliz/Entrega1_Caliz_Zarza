@@ -1,0 +1,12 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+{% block contenidoUno %}
+
+<form action="/AppCoder/buscar_2" method="GET">
+    <p><input type="number" name="numero_de_afiliado" id="numero_de_afiliado"></p>
+    <input type="submit" value="Buscar">
+</form>
+
+{% endblock %}

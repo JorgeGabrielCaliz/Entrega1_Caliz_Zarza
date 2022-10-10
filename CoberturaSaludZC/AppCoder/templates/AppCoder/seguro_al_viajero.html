@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario</title>
+</head>
+<body style="background-color: pink;">
+    <form action="/AppCoder/seguro_al_viajero/" method="POST">{% csrf_token %}
+        <p>Nro de afiliado: <input type="number" name="numero_de_afiliado"> </p>
+        <p>Plan: <input type="texto" name="plan"> </p>
+        <p>Destino: <input type="texto" name="destino"> </p>
+        <input type="submit" value="Guardar">
+    </form>
+</body>
+</html>
