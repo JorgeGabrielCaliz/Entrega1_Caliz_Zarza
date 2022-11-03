@@ -1,5 +1,18 @@
 
-Entrega intermedia del Proyecto Final
+<h1>Entrega del Proyecto Final</h1>
 
 {% block contenidoUno %}
+
+<body style="background-color: orange;">
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <h1> <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+            <a class="navbar-brand" href="{% url 'plan' %}">Plan</a>
+            <a class="navbar-brand" href="{% url 'cartillas' %}">Cartillas</a>
+            <a class="navbar-brand" href="{% url 'autorizaciones' %}">Autorizaciones</a>
+            <a class="navbar-brand" href="{% url 'seguro_al_viajero' %}">Seguro al viajero</a></h1>
+        </div>
+    </nav>
 {% endblock %}

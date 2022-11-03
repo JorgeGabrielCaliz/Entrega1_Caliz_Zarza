@@ -4,16 +4,9 @@ from django.db import models
 
 # Create your models here.
 
-class Empadronamiento(models.Model):
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    dni = models.IntegerField()
-    plan = models.CharField(max_length=30)
-    email = models.EmailField()
-    
-class Afiliado(models.Model):
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
+class Plan(models.Model):
+    nombre_del_plan = models.CharField(max_length = 30)
+    descripcion = models.CharField(max_length=100)
     numero_de_afiliado = models.IntegerField()
     
 class Cartillas(models.Model):
@@ -30,4 +23,3 @@ class Seguro_al_viajero(models.Model):
     numero_de_afiliado = models.IntegerField()
     plan = models.CharField(max_length=30)
     destino = models.CharField(max_length=30)
-    
