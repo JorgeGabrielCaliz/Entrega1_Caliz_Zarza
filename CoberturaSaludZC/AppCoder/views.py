@@ -14,6 +14,13 @@ def cartillas(request):
     cartillas.save()
     return render(request, "AppCoder/datos_guardados.html")
 
+def plan(request):
+    if request.method != "POST":
+        return render(request, "AppCoder/plan.html")
+    
+    plan = Plan(nombre_del_plan=request.POST["nombre_del_plan"], descripcion=request.POST["descripcion"], numero_de_afiliado=request.POST["numero_de_afiliado"])
+    plan.save()
+    return render(request, "AppCoder/datos_guardados.html")
 
 def autorizaciones(request):
     if request.method != "POST":
@@ -49,3 +56,34 @@ def buscar_2(request):
         }
         
         return render(request, "AppCoder/resultado_busqueda.html", contexto)
+    
+        
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
+
+class PlanList(ListView):
+    model = Plan
+    template_name = "AppCoder/plan_list.html"
+
+class PlanDetalle(DetailView):
+    model = Plan
+    template_name = "AppCoder/plan_detalle.html"
+
+class PlanCreacion(CreateView):
+    model = Plan
+    success_url = "/AppCoder/plan/list"
+    fields = ["nombre_del_plan", "descripcion", "numero_de_afiliado"]
+
+class PlanUpdateView(UpdateView):
+    model = Plan
+    success_url = "/AppCoder/plan/list"
+    fields = ["nombre_del_plan", "descripcion"]
+
+class PlanDelete(DeleteView):
+    model = Plan
+    success_url = "/AppCoder/plan/list"
