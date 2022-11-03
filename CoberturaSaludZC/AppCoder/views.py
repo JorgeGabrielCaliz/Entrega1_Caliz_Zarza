@@ -1,26 +1,10 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-from AppCoder.models import Empadronamiento, Afiliado, Cartillas, Autorizaciones, Seguro_al_viajero
+from AppCoder.models import Cartillas, Autorizaciones, Seguro_al_viajero
 
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
-
-def empadronamiento(request):
-    if request.method != "POST":
-        return render(request, "AppCoder/empadronamiento.html")
-    
-    empadronamiento = Empadronamiento(nombre=request.POST["nombre"], apellido=request.POST["apellido"], dni=request.POST["dni"], plan=request.POST["plan"], email=request.POST["email"])
-    empadronamiento.save()
-    return render(request, "AppCoder/datos_guardados.html")
-    
-def afiliado(request):
-    if request.method != "POST":
-        return render(request, "AppCoder/afiliado.html")
-    
-    afiliado = Afiliado(nombre=request.POST["nombre"], apellido=request.POST["apellido"], numero_de_afiliado=request.POST["numero_de_afiliado"])
-    afiliado.save()
-    return render(request, "AppCoder/datos_guardados.html")
     
 def cartillas(request):
     if request.method != "POST":
