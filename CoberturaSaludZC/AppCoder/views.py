@@ -1,11 +1,19 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
+<<<<<<< HEAD
 from AppCoder.models import Cartillas, Autorizaciones, Seguro_al_viajero, Plan
 
 def inicio(request):
     return render(request, "AppCoder/inicio.html")
 
+=======
+from AppCoder.models import Cartillas, Autorizaciones, Seguro_al_viajero
+
+def inicio(request):
+    return render(request, "AppCoder/inicio.html")
+    
+>>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870
 def cartillas(request):
     if request.method != "POST":
         return render(request, "AppCoder/cartilla.html")
@@ -58,6 +66,10 @@ def buscar_2(request):
         
         return render(request, "AppCoder/resultado_busqueda.html", contexto)
     
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870
 from django.views.generic import (
     ListView,
     DetailView,
@@ -86,4 +98,8 @@ class PlanUpdateView(UpdateView):
 
 class PlanDelete(DeleteView):
     model = Plan
+<<<<<<< HEAD
     success_url = "/AppCoder/plan/list"
+=======
+    success_url = "/AppCoder/plan/list"
+>>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870

@@ -46,4 +46,8 @@ urlpatterns = [
     
     path("r'borrar/(?P<pk>\d+)^$'", PlanDelete.as_view(), name="PlanDelete"),
     path('',inicio,),
+<<<<<<< HEAD
 ]
+=======
+]
+>>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870

@@ -22,4 +22,8 @@ class Autorizaciones(models.Model):
 class Seguro_al_viajero(models.Model):
     numero_de_afiliado = models.IntegerField()
     plan = models.CharField(max_length=30)
+<<<<<<< HEAD
     destino = models.CharField(max_length=30)
+=======
+    destino = models.CharField(max_length=30)
+>>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870
