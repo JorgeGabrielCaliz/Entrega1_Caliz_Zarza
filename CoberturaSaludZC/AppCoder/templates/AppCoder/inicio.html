@@ -2,10 +2,24 @@
 
 {% load static %}
 
-{% block contenidoQueCambia %}
 
-<h1>INICIO</h1>
-<p>Se ha heredado todo desde la plantilla padre</p>
-<h3></h3>
+{% block ContenidoQueCambia %}
+{% if request.user.is_authenticated %}
+    <h2>Bienvenido {{ user }} {{ user.avatar }}</h2>
+    <h4>Recuerda {{ user }} que debes registrar el plan en el que deseas adherirte. </h4>
+    {% if avatar %}
+            <img height="40px" src="{{ avatar }}"/>
+    {% endif %}
 
+    {% if request.user.is_authenticated %}
+
+        <p><a href="{% url 'EditarPerfil' %}">Editar Perfil</a></p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p><a href="{% url 'AgregarAvatar' %}">Agregar Avatar</a></p>
+        <h4>    <p><a FONT COLOR="black" href="{% url 'AboutMe' %}">Acerca de mí</a></p></h4>
+    {% endif %}
+{% else %}
+Usted no se encuentra registrado, debe hacerlo en el siguiente enlace:
+<p><a href="{% url 'Register' %}">REGISTRARSE</a></p>
+{% endif %}
 {% endblock %}

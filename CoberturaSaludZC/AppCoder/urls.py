@@ -28,6 +28,15 @@ from AppCoder.views import (
     plan,
     busqueda_2,
     buscar_2,
+    #Login
+    MyLogin,
+    MyLogout,
+    #Registrat y Editar Perfil
+    register,
+    editar_perfil,
+    #AVATAR
+    agregar_avatar,
+    about,
 )
 
 urlpatterns = [
@@ -46,8 +55,27 @@ urlpatterns = [
     
     path("r'borrar/(?P<pk>\d+)^$'", PlanDelete.as_view(), name="PlanDelete"),
     path('',inicio,),
-<<<<<<< HEAD
+
+    #LOGIN
+    path("login/", MyLogin.as_view(), name="login"),
+    #LOGOUT
+    path("logout/", MyLogout.as_view(), name="logout"),
+    #REGISTRO
+    path("register/", register, name="Register"),
+
+    #EDITAR PERFL USUARIO
+    path ("editar-perfil/", editar_perfil, name = "EditarPerfil"),
+
+    #AGREGAR AVATAR
+    path ("agregar-avatar/", agregar_avatar, name="AgregarAvatar"),
+    
+
+    #acerca de mi
+    path("about/", about, name="AboutMe"),
+
+    path("", inicio, name="inicio"),
+
+
 ]
-=======
-]
->>>>>>> 65341f82a0c601ddcf70d209f46bbe6be0f22870
+
+

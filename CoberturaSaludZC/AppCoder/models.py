@@ -1,6 +1,10 @@
 from encodings import normalize_encoding
 from logging.config import dictConfig
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+
 
 # Create your models here.
 
@@ -23,3 +27,9 @@ class Seguro_al_viajero(models.Model):
     numero_de_afiliado = models.IntegerField()
     plan = models.CharField(max_length=30)
     destino = models.CharField(max_length=30)
+
+class Avatar(LoginRequiredMixin, models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="avatares", null=True, blank=True)
+
+

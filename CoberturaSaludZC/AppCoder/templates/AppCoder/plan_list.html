@@ -1,15 +1,29 @@
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+{% block ContenidoQueCambia %}
+
+
 <h1>Planes - CoberturaSaludZC </h1>
-<ul>
-    {% for plan in object_list %}
-    
-    <li>
-        <p>Nombre: {{ plan.nombre_del_plan }}</p>
-        <p>
-            <a href="{% url 'PlanDetail' plan.id %}">Ver plan</a>
-            <a href="{% url 'PlanUpdate' plan.id %}">Editar</a>
-            <a href="{% url 'PlanDelete' plan.id %}">Borrar</a> 
-        </p>
+
+
+{% if object_list %}
+    <ul>
+        {% for plan in object_list %}
         
-    </li>
-    {% endfor %}
-</ul>
+        <li>
+            <p>Nombre: {{ plan.nombre_del_plan }}</p>
+            <p>
+                <a href="{% url 'PlanDetail' plan.id %}">Ver plan</a>
+                <a href="{% url 'PlanUpdate' plan.id %}">Editar</a>
+                <a href="{% url 'PlanDelete' plan.id %}">Borrar</a> 
+            </p>
+            
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+<h2>NO HAY CURSOS</h2>
+{% endif %}
+{% endblock %}

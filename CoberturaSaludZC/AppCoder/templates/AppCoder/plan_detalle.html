@@ -1,3 +1,15 @@
+
+
+{% extends "AppCoder/madre.html" %}
+
+{% load static %}
+
+
+{% block ContenidoQueCambia %}
+
 <h3>Plan</h3>  
 <p>Nombre del plan: <strong>{{ plan.nombre_del_plan }}</strong> </p>
 <p>Descripcion: <i> {{ plan.descripcion }}</i></p>
+
+
+{% endblock %}
