@@ -1,4 +1,4 @@
-# Entrega itermedia del Proyecto Final
+# Entrega del Proyecto Final
 
 * Jose Zarza
 * Jorge Caliz
