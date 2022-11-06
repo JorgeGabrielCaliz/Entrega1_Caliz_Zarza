@@ -3,15 +3,6 @@
 * Jose Zarza
 * Jorge Caliz
 
-En este proyecto simulamos la carga de datos para una prepaga llama "CoberturaSaludZC" la web cuenta con las siguientes rutas:
+Jorge Caliz: Modifico parte del proyecto anterior, creacion de superadmin, Realizo el CRUD(creacion de planes, editar planes, eliminarlos y lectura), modificacion de la ruta base "/", el messenger para admin
 
-AppCoder/inicio.html
-AppCoder/empadronamiento.html
-AppCoder/afiliado.html
-AppCoder/cartilla.html
-AppCoder/autorizaciones.html
-AppCoder/seguro_al_viajero.html
-
-y cuenta con un motor de busqueda para la siguiente ruta
-
-AppCoder/busqueda_2.html
+Jose Zarza: Realizo el registro de usuario, creacion de avatar, correcion de herencias y casos de pruebas en "test.py", creacion del mensaje si la pagina no tiene contenidos y creacion del video, explicativo.
